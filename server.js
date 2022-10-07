@@ -20,6 +20,7 @@ mongoose
         app.listen(PORT, () => console.log(`server started on port: ${PORT}`))
     })
 
+    app.get('/',(req,res)=>res.send('hello'))
 app.use('/auth', authRoute);
 app.use('/test', testRoute);
 
