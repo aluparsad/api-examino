@@ -5,6 +5,14 @@ const Test = require('../model/Question');
 
 
 
+route.post('/exam/remove',  (req,res) => {
+    const title = req.body.title
+
+    Exam
+    .deleteOne({title:title})
+    .then(r => res.status(200).send({msg:'deleted'}))
+    .catch(err => res.status(400).send({err:"cannot delete"}))
+})
 
 route.put('/exam', async (req,res) => {
     const title = req.body.title;
